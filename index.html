@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>PCCWSOLUTION</title>
+	<style type="text/css">
+	.head{background-color:#00FF00;color:black;font-weight:bold;font-size:50px;text-align:center;padding:30px}
+	.table, th ,td{border-collapse:collapse;border:1px solid black;width:950px;height:30px;font-size:40px;text-align:center;}
+	li{display:inline;background-color: #dddddd;}
+	.button{padding: 15px 32px;text-align: center;}
+
+
+</head>
+	</style>
+<body style="margin:0px;background-color:#eeeeee;" >
+	<div class="head" id="title">­pm係傻仔</div>
+
+	<HR color="#000000" size="5"></HR>
+	<p align="center">
+	<button class="button" type="button" onclick="changetitle(1)">­dog1</button>
+	<button class="button" type="button" onclick="changetitle(0)">dog2</button>
+	update at:1-12-2017
+	</p>
+
+	<div class="table, th, td"><table>
+	<tr><td>RANK</td><td>NAME</td></tr>
+	<tr><td>1</td><td id="r1name"></td></tr>
+	<tr><td>2</td><td id="r2name"></td></tr>
+	<tr><td>3</td><td id="r3name"></td></tr>
+	<tr><td>4</td><td id="r4name"></td></tr>
+	<tr><td>5</td><td id="r5name"></td></tr>
+	</table></div>
+
+	<HR color="#000000" size="5"></HR>
+
+	<p align="center"><a href="https://www.legco.gov.hk/cindex.html">
+	<img border="0" alt="legco" src="legco.png" width="100" height="100"></a>
+	<a href="http://www.districtcouncils.gov.hk">
+	<img border="0" alt="18-district" src="18district.png" width="100" height="100"></a>
+	</p>
+
+	<script>
+	var AMMeeting=5,PMMeeting=5,SIMeeting=3,SL=-10,Doc=-5,Legco=15,CGCHall=10,CGCRm=7,EPD=10,EDB=1,AFCD=3,Feh=6,HQ=6,CW=5,East=5,South=10,WC=5,KC=5,KT=2,SSP=2,YTM=2,WTS=2,Island=5,KandT=2,North=1,SK=7,ST=2,STDC=8,TP=1,TW=1,TM=7,YL=5;
+	var points_CC=EPD+East+KT+KandT+CW;
+	var points_CSW=CGCHall+KC+Legco+AMMeeting+Feh+Legco+AMMeeting+Feh;
+	var points_LCK=CGCRm+Feh+WC+KC+YL+TP+SIMeeting+CGCRm;
+	var points_LHM=EPD+WTS+AFCD+SIMeeting+Legco+AMMeeting+Legco+East;
+	var points_LKC=CGCRm+WTS+KC+CW+KT+SK+HQ+South;
+	var points_LST=TM+TM+Feh+TM+CW+SIMeeting+Legco+East;
+	var points_TTF=EDB+ST+KandT+SIMeeting+KC;
+	var points_TYM=CGCRm+KT+KandT+SIMeeting+SSP+YTM+Feh;
+	var points_YCM=SSP+KandT+East+ST+East+PMMeeting+AFCD+East+PMMeeting+HQ+South;
+	var points_YPM=CGCHall+CGCHall+Legco+SIMeeting+AFCD+SIMeeting+EDB+WTS;
+
+	if(points_CC==points_CSW)
+	{points_CC+=1;}
+	else if(points_CC==points_LCK)
+	{points_CC+=1;}
+	else if(points_CC==points_LHM)
+	{points_CC+=1;}
+	else if(points_CC==points_LKC)
+	{points_CC+=1;}
+	else if(points_CC==points_LST)
+	{points_CC+=1;}
+	else if(points_CC==points_TTF)
+	{points_CC+=1;}
+	else if(points_CC==points_TYM)
+	{points_CC+=1;}
+	else if(points_CC==points_YCM)
+	{points_CC+=1;}
+	else if(points_CC==points_YPM)
+	{points_CC+=1;}
+
+	if(points_CSW==points_LCK)
+	{points_CSW+=1;}
+	else if(points_CSW==points_LHM)
+	{points_CSW+=1;}
+	else if(points_CSW==points_LKC)
+	{points_CSW+=1;}
+	else if(points_CSW==points_LST)
+	{points_CSW+=1;}
+	else if(points_CSW==points_TTF)
+	{points_CSW+=1;}
+	else if(points_CSW==points_TYM)
+	{points_CSW+=1;}
+	else if(points_CSW==points_YCM)
+	{points_CSW+=1;}
+	else if(points_CSW==points_YPM)
+	{points_CSW+=1;}
+
+	if(points_LCK==points_LHM)
+	{points_LCK+=1;}
+	else if(points_LCK==points_LKC)
+	{points_LCK+=1;}
+	else if(points_LCK==points_LST)
+	{points_LCK+=1;}
+	else if(points_LCK==points_TTF)
+	{points_LCK+=1;}
+	else if(points_LCK==points_TYM)
+	{points_LCK+=1;}
+	else if(points_LCK==points_YCM)
+	{points_LCK+=1;}
+	else if(points_LCK==points_YPM)
+	{points_LCK+=1;}
+
+	if(points_LHM==points_LKC)
+	{points_LHM+=1;}
+	else if(points_LHM==points_LST)
+	{points_LHM+=1;}
+	else if(points_LCK==points_TTF)
+	{points_LHM+=1;}
+	else if(points_LHM==points_TYM)
+	{points_LHM+=1;}
+	else if(points_LHM==points_YCM)
+	{points_LHM+=1;}
+	else if(points_LHM==points_YPM)
+	{points_LHM+=1;}
+
+	if(points_LKC==points_LST)
+	{points_LKC+=1;}
+	else if(points_LKC==points_TTF)
+	{points_LKC+=1;}
+	else if(points_LKC==points_TYM)
+	{points_LKC+=1;}
+	else if(points_LKC==points_YCM)
+	{points_LKC+=1;}
+	else if(points_LKC==points_YPM)
+	{points_LKC+=1;}
+
+	if(points_LST==points_TTF)
+	{points_LST+=1;}
+	else if(points_LST==points_TYM)
+	{points_LST+=1;}
+	else if(points_LST==points_YCM)
+	{points_LST+=1;}
+	else if(points_LST==points_YPM)
+	{points_LST+=1;}
+
+	if(points_TTF==points_TYM)
+	{points_TTF+=1;}
+	else if(points_TTF==points_YCM)
+	{points_TTF+=1;}
+	else if(points_TTF==points_YPM)
+	{points_TTF+=1;}
+
+	if(points_TYM==points_YCM)
+	{points_TYM+=1;}
+	else if(points_TYM==points_YPM)
+	{points_TYM+=1;}
+
+	if(points_YCM==points_YPM)
+	{points_YCM+=1;}
+
+	var points = [points_LHM,points_YPM,points_LKC,points_TTF,points_CSW,points_YCM,points_TYM,points_LST,points_CC,points_LCK];
+	points.sort(function(a, b){return b-a});
+	
+	if(points[0]==points_LHM){
+	document.getElementById("r1name").innerHTML = "LHM";}
+	else if(points[0]==points_YPM){
+	document.getElementById("r1name").innerHTML = "YPM";}
+	else if(points[0]==points_LKC){
+	document.getElementById("r1name").innerHTML = "LKC";}
+	else if(points[0]==points_TTF){
+	document.getElementById("r1name").innerHTML = "TTF";}
+	else if(points[0]==points_CSW){
+	document.getElementById("r1name").innerHTML = "CSW";}
+	else if(points[0]==points_YCM){
+	document.getElementById("r1name").innerHTML = "YCM";}
+	else if(points[0]==points_TYM){
+	document.getElementById("r1name").innerHTML = "TYM";}
+	else if(points[0]==points_LST){
+	document.getElementById("r1name").innerHTML = "LST";}
+	else if(points[0]==points_CC){
+	document.getElementById("r1name").innerHTML = "CC";}
+	else if(points[0]==points_LCK){
+	document.getElementById("r1name").innerHTML = "LCK";}
+
+	if(points[1]==points_LHM){
+	document.getElementById("r2name").innerHTML = "LHM";}
+	else if(points[1]==points_YPM){
+	document.getElementById("r2name").innerHTML = "YPM";}
+	else if(points[1]==points_LKC){
+	document.getElementById("r2name").innerHTML = "LKC";}
+	else if(points[1]==points_TTF){
+	document.getElementById("r2name").innerHTML = "TTF";}
+	else if(points[1]==points_CSW){
+	document.getElementById("r2name").innerHTML = "CSW";}
+	else if(points[1]==points_YCM){
+	document.getElementById("r2name").innerHTML = "YCM";}
+	else if(points[1]==points_TYM){
+	document.getElementById("r2name").innerHTML = "TYM";}
+	else if(points[1]==points_LST){
+	document.getElementById("r2name").innerHTML = "LST";}
+	else if(points[1]==points_CC){
+	document.getElementById("r2name").innerHTML = "CC";}
+	else if(points[1]==points_LCK){
+	document.getElementById("r2name").innerHTML = "LCK";}
+
+	if(points[2]==points_LHM){
+	document.getElementById("r3name").innerHTML = "LHM";}
+	else if(points[2]==points_YPM){
+	document.getElementById("r3name").innerHTML = "YPM";}
+	else if(points[2]==points_LKC){
+	document.getElementById("r3name").innerHTML = "LKC";}
+	else if(points[2]==points_TTF){
+	document.getElementById("r3name").innerHTML = "TTF";}
+	else if(points[2]==points_CSW){
+	document.getElementById("r3name").innerHTML = "CSW";}
+	else if(points[2]==points_YCM){
+	document.getElementById("r3name").innerHTML = "YCM";}
+	else if(points[2]==points_TYM){
+	document.getElementById("r3name").innerHTML = "TYM";}
+	else if(points[2]==points_LST){
+	document.getElementById("r3name").innerHTML = "LST";}
+	else if(points[2]==points_CC){
+	document.getElementById("r3name").innerHTML = "CC";}
+	else if(points[2]==points_LCK){
+	document.getElementById("r3name").innerHTML = "LCK";}
+
+	if(points[3]==points_LHM){
+	document.getElementById("r4name").innerHTML = "LHM";}
+	else if(points[3]==points_YPM){
+	document.getElementById("r4name").innerHTML = "YPM";}
+	else if(points[3]==points_LKC){
+	document.getElementById("r4name").innerHTML = "LKC";}
+	else if(points[3]==points_TTF){
+	document.getElementById("r4name").innerHTML = "TTF";}
+	else if(points[3]==points_CSW){
+	document.getElementById("r4name").innerHTML = "CSW";}
+	else if(points[3]==points_YCM){
+	document.getElementById("r4name").innerHTML = "YCM";}
+	else if(points[3]==points_TYM){
+	document.getElementById("r4name").innerHTML = "TYM";}
+	else if(points[3]==points_LST){
+	document.getElementById("r4name").innerHTML = "LST";}
+	else if(points[3]==points_CC){
+	document.getElementById("r4name").innerHTML = "CC";}
+	else if(points[3]==points_LCK){
+	document.getElementById("r4name").innerHTML = "LCK";}
+
+	if(points[4]==points_LHM){
+	document.getElementById("r5name").innerHTML = "LHM";}
+	else if(points[4]==points_YPM){
+	document.getElementById("r5name").innerHTML = "YPM";}
+	else if(points[4]==points_LKC){
+	document.getElementById("r5name").innerHTML = "LKC";}
+	else if(points[4]==points_TTF){
+	document.getElementById("r5name").innerHTML = "TTF";}
+	else if(points[4]==points_CSW){
+	document.getElementById("r5name").innerHTML = "CSW";}
+	else if(points[4]==points_YCM){
+	document.getElementById("r5name").innerHTML = "YCM";}
+	else if(points[4]==points_TYM){
+	document.getElementById("r5name").innerHTML = "TYM";}
+	else if(points[4]==points_LST){
+	document.getElementById("r5name").innerHTML = "LST";}
+	else if(points[4]==points_CC){
+	document.getElementById("r5name").innerHTML = "CC";}
+	else if(points[4]==points_LCK){
+	document.getElementById("r5name").innerHTML = "LCK";}
+	
+	function changetitle(sw){
+	if(sw==1){
+	document.getElementById("title").innerHTML = "­¢®`±Æ¦æº]";
+	if(points[0]==points_LHM){
+	document.getElementById("r1name").innerHTML = "LHM";}
+	else if(points[0]==points_YPM){
+	document.getElementById("r1name").innerHTML = "YPM";}
+	else if(points[0]==points_LKC){
+	document.getElementById("r1name").innerHTML = "LKC";}
+	else if(points[0]==points_TTF){
+	document.getElementById("r1name").innerHTML = "TTF";}
+	else if(points[0]==points_CSW){
+	document.getElementById("r1name").innerHTML = "CSW";}
+	else if(points[0]==points_YCM){
+	document.getElementById("r1name").innerHTML = "YCM";}
+	else if(points[0]==points_TYM){
+	document.getElementById("r1name").innerHTML = "TYM";}
+	else if(points[0]==points_LST){
+	document.getElementById("r1name").innerHTML = "LST";}
+	else if(points[0]==points_CC){
+	document.getElementById("r1name").innerHTML = "CC";}
+	else if(points[0]==points_LCK){
+	document.getElementById("r1name").innerHTML = "LCK";}
+
+	if(points[1]==points_LHM){
+	document.getElementById("r2name").innerHTML = "LHM";}
+	else if(points[1]==points_YPM){
+	document.getElementById("r2name").innerHTML = "YPM";}
+	else if(points[1]==points_LKC){
+	document.getElementById("r2name").innerHTML = "LKC";}
+	else if(points[1]==points_TTF){
+	document.getElementById("r2name").innerHTML = "TTF";}
+	else if(points[1]==points_CSW){
+	document.getElementById("r2name").innerHTML = "CSW";}
+	else if(points[1]==points_YCM){
+	document.getElementById("r2name").innerHTML = "YCM";}
+	else if(points[1]==points_TYM){
+	document.getElementById("r2name").innerHTML = "TYM";}
+	else if(points[1]==points_LST){
+	document.getElementById("r2name").innerHTML = "LST";}
+	else if(points[1]==points_CC){
+	document.getElementById("r2name").innerHTML = "CC";}
+	else if(points[1]==points_LCK){
+	document.getElementById("r2name").innerHTML = "LCK";}
+
+	if(points[2]==points_LHM){
+	document.getElementById("r3name").innerHTML = "LHM";}
+	else if(points[2]==points_YPM){
+	document.getElementById("r3name").innerHTML = "YPM";}
+	else if(points[2]==points_LKC){
+	document.getElementById("r3name").innerHTML = "LKC";}
+	else if(points[2]==points_TTF){
+	document.getElementById("r3name").innerHTML = "TTF";}
+	else if(points[2]==points_CSW){
+	document.getElementById("r3name").innerHTML = "CSW";}
+	else if(points[2]==points_YCM){
+	document.getElementById("r3name").innerHTML = "YCM";}
+	else if(points[2]==points_TYM){
+	document.getElementById("r3name").innerHTML = "TYM";}
+	else if(points[2]==points_LST){
+	document.getElementById("r3name").innerHTML = "LST";}
+	else if(points[2]==points_CC){
+	document.getElementById("r3name").innerHTML = "CC";}
+	else if(points[2]==points_LCK){
+	document.getElementById("r3name").innerHTML = "LCK";}
+
+	if(points[3]==points_LHM){
+	document.getElementById("r4name").innerHTML = "LHM";}
+	else if(points[3]==points_YPM){
+	document.getElementById("r4name").innerHTML = "YPM";}
+	else if(points[3]==points_LKC){
+	document.getElementById("r4name").innerHTML = "LKC";}
+	else if(points[3]==points_TTF){
+	document.getElementById("r4name").innerHTML = "TTF";}
+	else if(points[3]==points_CSW){
+	document.getElementById("r4name").innerHTML = "CSW";}
+	else if(points[3]==points_YCM){
+	document.getElementById("r4name").innerHTML = "YCM";}
+	else if(points[3]==points_TYM){
+	document.getElementById("r4name").innerHTML = "TYM";}
+	else if(points[3]==points_LST){
+	document.getElementById("r4name").innerHTML = "LST";}
+	else if(points[3]==points_CC){
+	document.getElementById("r4name").innerHTML = "CC";}
+	else if(points[3]==points_LCK){
+	document.getElementById("r4name").innerHTML = "LCK";}
+
+	if(points[4]==points_LHM){
+	document.getElementById("r5name").innerHTML = "LHM";}
+	else if(points[4]==points_YPM){
+	document.getElementById("r5name").innerHTML = "YPM";}
+	else if(points[4]==points_LKC){
+	document.getElementById("r5name").innerHTML = "LKC";}
+	else if(points[4]==points_TTF){
+	document.getElementById("r5name").innerHTML = "TTF";}
+	else if(points[4]==points_CSW){
+	document.getElementById("r5name").innerHTML = "CSW";}
+	else if(points[4]==points_YCM){
+	document.getElementById("r5name").innerHTML = "YCM";}
+	else if(points[4]==points_TYM){
+	document.getElementById("r5name").innerHTML = "TYM";}
+	else if(points[4]==points_LST){
+	document.getElementById("r5name").innerHTML = "LST";}
+	else if(points[4]==points_CC){
+	document.getElementById("r5name").innerHTML = "CC";}
+	else if(points[4]==points_LCK){
+	document.getElementById("r5name").innerHTML = "LCK";}
+	}
+	else{
+	document.getElementById("title").innerHTML = "¤²µó±Æ¦æº]";
+	if(points[9]==points_LHM){
+	document.getElementById("r1name").innerHTML = "LHM";}
+	else if(points[9]==points_YPM){
+	document.getElementById("r1name").innerHTML = "YPM";}
+	else if(points[9]==points_LKC){
+	document.getElementById("r1name").innerHTML = "LKC";}
+	else if(points[9]==points_TTF){
+	document.getElementById("r1name").innerHTML = "TTF";}
+	else if(points[9]==points_CSW){
+	document.getElementById("r1name").innerHTML = "CSW";}
+	else if(points[9]==points_YCM){
+	document.getElementById("r1name").innerHTML = "YCM";}
+	else if(points[9]==points_TYM){
+	document.getElementById("r1name").innerHTML = "TYM";}
+	else if(points[9]==points_LST){
+	document.getElementById("r1name").innerHTML = "LST";}
+	else if(points[9]==points_CC){
+	document.getElementById("r1name").innerHTML = "CC";}
+	else if(points[9]==points_LCK){
+	document.getElementById("r1name").innerHTML = "LCK";}
+
+	if(points[8]==points_LHM){
+	document.getElementById("r2name").innerHTML = "LHM";}
+	else if(points[8]==points_YPM){
+	document.getElementById("r2name").innerHTML = "YPM";}
+	else if(points[8]==points_LKC){
+	document.getElementById("r2name").innerHTML = "LKC";}
+	else if(points[8]==points_TTF){
+	document.getElementById("r2name").innerHTML = "TTF";}
+	else if(points[8]==points_CSW){
+	document.getElementById("r2name").innerHTML = "CSW";}
+	else if(points[8]==points_YCM){
+	document.getElementById("r2name").innerHTML = "YCM";}
+	else if(points[8]==points_TYM){
+	document.getElementById("r2name").innerHTML = "TYM";}
+	else if(points[8]==points_LST){
+	document.getElementById("r2name").innerHTML = "LST";}
+	else if(points[8]==points_CC){
+	document.getElementById("r2name").innerHTML = "CC";}
+	else if(points[8]==points_LCK){
+	document.getElementById("r2name").innerHTML = "LCK";}
+
+	if(points[7]==points_LHM){
+	document.getElementById("r3name").innerHTML = "LHM";}
+	else if(points[7]==points_YPM){
+	document.getElementById("r3name").innerHTML = "YPM";}
+	else if(points[7]==points_LKC){
+	document.getElementById("r3name").innerHTML = "LKC";}
+	else if(points[7]==points_TTF){
+	document.getElementById("r3name").innerHTML = "TTF";}
+	else if(points[7]==points_CSW){
+	document.getElementById("r3name").innerHTML = "CSW";}
+	else if(points[7]==points_YCM){
+	document.getElementById("r3name").innerHTML = "YCM";}
+	else if(points[7]==points_TYM){
+	document.getElementById("r3name").innerHTML = "TYM";}
+	else if(points[7]==points_LST){
+	document.getElementById("r3name").innerHTML = "LST";}
+	else if(points[7]==points_CC){
+	document.getElementById("r3name").innerHTML = "CC";}
+	else if(points[7]==points_LCK){
+	document.getElementById("r3name").innerHTML = "LCK";}
+
+	if(points[6]==points_LHM){
+	document.getElementById("r4name").innerHTML = "LHM";}
+	else if(points[6]==points_YPM){
+	document.getElementById("r4name").innerHTML = "YPM";}
+	else if(points[6]==points_LKC){
+	document.getElementById("r4name").innerHTML = "LKC";}
+	else if(points[6]==points_TTF){
+	document.getElementById("r4name").innerHTML = "TTF";}
+	else if(points[6]==points_CSW){
+	document.getElementById("r4name").innerHTML = "CSW";}
+	else if(points[6]==points_YCM){
+	document.getElementById("r4name").innerHTML = "YCM";}
+	else if(points[6]==points_TYM){
+	document.getElementById("r4name").innerHTML = "TYM";}
+	else if(points[6]==points_LST){
+	document.getElementById("r4name").innerHTML = "LST";}
+	else if(points[6]==points_CC){
+	document.getElementById("r4name").innerHTML = "CC";}
+	else if(points[6]==points_LCK){
+	document.getElementById("r4name").innerHTML = "LCK";}
+
+	if(points[5]==points_LHM){
+	document.getElementById("r5name").innerHTML = "LHM";}
+	else if(points[5]==points_YPM){
+	document.getElementById("r5name").innerHTML = "YPM";}
+	else if(points[5]==points_LKC){
+	document.getElementById("r5name").innerHTML = "LKC";}
+	else if(points[5]==points_TTF){
+	document.getElementById("r5name").innerHTML = "TTF";}
+	else if(points[5]==points_CSW){
+	document.getElementById("r5name").innerHTML = "CSW";}
+	else if(points[5]==points_YCM){
+	document.getElementById("r5name").innerHTML = "YCM";}
+	else if(points[5]==points_TYM){
+	document.getElementById("r5name").innerHTML = "TYM";}
+	else if(points[5]==points_LST){
+	document.getElementById("r5name").innerHTML = "LST";}
+	else if(points[5]==points_CC){
+	document.getElementById("r5name").innerHTML = "CC";}
+	else if(points[5]==points_LCK){
+	document.getElementById("r5name").innerHTML = "LCK";}
+	}
+	}
+	</script>
+
+
+
+</body>
+</html>
